@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44609123, g: 0.495856, b: 0.5745077, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9bc4a197bd862a044b3110180bee5033, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -233,12 +233,12 @@ GameObject:
   - component: {fileID: 477271886}
   - component: {fileID: 477271885}
   - component: {fileID: 477271884}
-  - component: {fileID: 477271883}
   - component: {fileID: 477271882}
   - component: {fileID: 477271887}
+  - component: {fileID: 477271883}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,9 +268,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 2.7601173
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 0.036888957, z: -0.00000011920929}
 --- !u!23 &477271884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477271881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6537957, y: 1.07, z: -13.408595}
+  m_LocalPosition: {x: 4.6537957, y: 3.74, z: 11.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -479,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e71a26001a94fa54e8dd39078cbbf45c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.54
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e71a26001a94fa54e8dd39078cbbf45c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -583,7 +583,6 @@ GameObject:
   - component: {fileID: 1592597878}
   - component: {fileID: 1592597877}
   - component: {fileID: 1592597876}
-  - component: {fileID: 1592597875}
   - component: {fileID: 1592597879}
   - component: {fileID: 1592597874}
   - component: {fileID: 1592597880}
@@ -605,27 +604,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1592597875
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592597873}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.92, z: 0}
 --- !u!23 &1592597876
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -683,7 +668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592597873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -1, z: -1.82}
+  m_LocalPosition: {x: 0.1, y: 3.63, z: 2.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1014091237}
@@ -704,10 +689,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 200
-  controller: {fileID: 0}
+  controller: {fileID: 1592597874}
   gravityScale: 1
   rotSpeed: 90
   score: 21
+  Enemy: {fileID: 477271881}
+  PodeUsar: 0
   anim: {fileID: 538003500}
 --- !u!95 &1592597880
 Animator:
@@ -719,7 +706,7 @@ Animator:
   m_GameObject: {fileID: 1592597873}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e21ddeba52b74a246871f5e2a0f20d4d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -741,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0157f02990fff9945b414ada312dd175, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0157f02990fff9945b414ada312dd175, type: 3}
       propertyPath: m_LocalPosition.z
