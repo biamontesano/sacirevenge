@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody _rigidbody;
+    private Vector3 _velocity;
+
     public float moveSpeed;
     public float jumpForce;
     public CharacterController controller;
@@ -22,8 +25,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _rigidbody = this.GetComponent<Rigidbody>();
+
         controller = GetComponent<CharacterController>();
         moveSpeed = moveSpeed;
+        
     }
 
     // Update is called once per frame
@@ -50,5 +56,16 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
         anim.SetInteger("Score", score);
 
+    }    
+    
+    void OnCollisionEnter(Collision collision){
+        ReflectProjectile(_rigidbody, collision.contacts[0].normal);
     }
+
+    private void ReflectProjectile(Rigidbody rb, Vector3 reflectVector)
+    {    
+        _velocity = Vector3.Reflect(_velocity, reflectVector);
+        _rigidbody.velocity = _velocity;
+    }
+
 }

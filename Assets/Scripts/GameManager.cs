@@ -5,38 +5,36 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject ballPrefab;
     public GameObject playerPrefab;
-    public Text scoreText;
-    public Text ballText;
-    public Text levelText;
+    public GameObject npcPrefab;
+    public GameObject npcHomePrefab;
 
+    public Text scoreText;
+    public Text livesText;
+    public Text levelText;
     public Text highscoreText;
 
     public GameObject panelMenu;
-    public GameObject panelPlayMenu;
+    public GameObject panelPlay;
     public GameObject panelLevelCompleted;
     public GameObject panelGameOver;
-
-    public GameObject[] levels;
+    public GameObject [] levels;
 
     public static GameManager Instance { get; private set; }
 
     public enum State { MENU, INIT, PLAY, LEVELCOMPLETED, LOADLEVEL, GAMEOVER }
-
-    private GameObject _currentBall;
-
-    private GameObject _currentLevel;
-
-    bool _isSwitchingState;
     State _state;
+
+    GameObject _currentLife;
+    GameObject _currentLevel;
+    bool _isSwitchingState;
 
     private int _score;
     public int Score
     {
         get { return _score; }
         set { _score = value; 
-            scoreText.text = "Score: " + _score;
+            scoreText.text = "SCORE " + _score;
         }
     }
     
@@ -45,24 +43,22 @@ public class GameManager : MonoBehaviour
     {
         get { return _level; }
         set { _level = value; 
-            levelText.text = "Level: " + _level;
+            levelText.text = "Level " + _level;
         }
     }
     
-    private int _balls;
-    public int Balls
+    private int _lives;
+    public int Lives
     {
-        get { return _balls; }
-        set { _balls = value; 
-            ballText.text = "Balls: " + _balls;
-        }
+        get { return _lives; }
+        set { _lives = value; 
+            livesText.text = "Vidas " + _lives;}
     }
-
-    public void PlayClick()
+    
+    public void PlayClicked()
     {
         SwitchState(State.INIT);
     }
-
     void Start()
     {
         Instance = this;
@@ -75,7 +71,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SwitchDelay(newState, delay));
     }
 
-    IEnumerator SwitchDelay(State newState, float delay )
+    IEnumerator SwitchDelay(State newState, float delay)
     {
         _isSwitchingState = true;
         yield return new WaitForSeconds(delay);
@@ -90,30 +86,33 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case State.MENU:
-                Cursor.visible = true;
                 highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
                 panelMenu.SetActive(true);
                 break;
             case State.INIT:
-                Cursor.visible = false;
-                panelPlayMenu.SetActive(true);
+                panelPlay.SetActive(true);
                 Score = 0;
                 Level = 0;
-                Balls = 3;
-                Instantiate(playerPrefab);
+                Lives = 3;
+                if(_currentLevel != null)
+                {
+                    Destroy(_currentLevel);
+                }
                 SwitchState(State.LOADLEVEL);
                 break;
             case State.PLAY:
                 break;
             case State.LEVELCOMPLETED:
-                Destroy(_currentBall);
+                Destroy(_currentLife);
                 Destroy(_currentLevel);
                 Level++;
-                SwitchState(State.LOADLEVEL);
                 panelLevelCompleted.SetActive(true);
+                SwitchState(State.LOADLEVEL);
                 break;
             case State.LOADLEVEL:
-                if( Level >= levels.Length)
+                Instantiate(npcPrefab);
+                Instantiate(npcHomePrefab);
+                if(Level >= levels.Length)
                 {
                     SwitchState(State.GAMEOVER);
                 }
@@ -124,8 +123,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case State.GAMEOVER:
-                if(Score > PlayerPrefs.GetInt("highscore"))
-                {
+                if (Score > PlayerPrefs.GetInt("highscore")) {
                     PlayerPrefs.SetInt("highscore", Score);
                 }
                 panelGameOver.SetActive(true);
@@ -142,34 +140,38 @@ public class GameManager : MonoBehaviour
             case State.INIT:
                 break;
             case State.PLAY:
-            if(_currentBall == null)
-            {
-                if(Balls > 0)
+                if(_currentLife == null)
                 {
-                    _currentBall = Instantiate(ballPrefab);
+                    if(Lives < 0)
+                    {
+                        SwitchState(State.GAMEOVER);
+                    }
+                    // if(Lives > 0)
+                    // {
+                    //     _currentLife = Instantiate(playerPrefab);
+                    // }
+                    // else
+                    // {
+                    //     SwitchState(State.GAMEOVER);
+                    // }
                 }
-                else
-                {
-                    SwitchState(State.GAMEOVER);
-                }
+
                 if(_currentLevel != null && _currentLevel.transform.childCount == 0 && !_isSwitchingState)
                 {
                     SwitchState(State.LEVELCOMPLETED);
                 }
-            }
                 break;
             case State.LEVELCOMPLETED:
                 break;
             case State.LOADLEVEL:
                 break;
             case State.GAMEOVER:
-            if(Input.anyKeyDown)
-            {
-                SwitchState(State.MENU);
-            }
+                if(Input.anyKeyDown)
+                {
+                SwitchState(State.MENU); 
+                }
                 break;
         }
-        
     }
 
     void EndState()
@@ -189,8 +191,8 @@ public class GameManager : MonoBehaviour
             case State.LOADLEVEL:
                 break;
             case State.GAMEOVER:
-                panelPlayMenu.SetActive(false);
-                panelGameOver.SetActive(true);
+                panelPlay.SetActive(false);
+                panelGameOver.SetActive(false);
                 break;
         }
 
