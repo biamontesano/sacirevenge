@@ -18,11 +18,6 @@ public class GameFlow : MonoBehaviour
     public Transform npcObj;
     Vector3 _nextNpcSpawn;
     
-    
-    public Transform npcHomeObj;
-    Vector3 _nextNpcHomeSpawn;
-    
-    int _randChoice;
 
     void Start()
     {
@@ -94,7 +89,7 @@ public class GameFlow : MonoBehaviour
         }
 
         _nextNpcSpawn.x = _nextTileSpawn.x;
-        _nextNpcSpawn.y = 1;
+        _nextNpcSpawn.y = 1.72f;
         _nextNpcSpawn.z = _randZ;
         Instantiate(npcObj, _nextNpcSpawn, npcObj.rotation);
 
