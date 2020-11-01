@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public float moveSpeed;
     public float jumpForce;
     public CharacterController controller;
@@ -89,7 +88,7 @@ public class PlayerController : MonoBehaviour
         if (mH !=  0 || mV != 0)
         {
             anim.SetBool("Movendo", true);
-        } else
+        }else
         {
             anim.SetBool("Movendo", false);
         }
@@ -124,6 +123,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("SkillTornado", false);
         }
     }
+
     //Puxa para Garrafa e Destroi o Jogador.
     public IEnumerator Sugando()
     {
