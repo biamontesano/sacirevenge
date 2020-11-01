@@ -5,68 +5,38 @@ using UnityEngine.AI;
 
 public class NpcsController : MonoBehaviour
 {
-    public float moveSpeed = 3f;
-    public float rotSpeed = 200f;
 
-    bool _isWandering = false;
-    bool _isRotatingLeft = false;
-    bool _isRotatingRight = false;
-    bool _isWalking = false;
+    public float MoveSpeed = 2;
+    private Rigidbody Npc;
+    public GameObject Point;
+    private Vector3 Direction;
+    private float Distance;
 
+    // Start is called before the first frame update
     void Start()
     {
-        
+        Npc = GetComponent<Rigidbody>();
     }
-    void Update()
+    
+    private void FixedUpdate()
     {
-        if(_isWandering == false)
-        {
-            StartCoroutine(Wander());
-        }
-        if(_isRotatingRight == true)
-        {
-            transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
-        }
-        if(_isRotatingLeft == true)
-        {
-            transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
-        }
-        if(_isWalking == true)
-        {
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        }
+        Direction = Point.transform.position - Npc.transform.position;
+        Distance = Vector3.Distance(transform.position, Point.transform.position);
+
+
+        Quaternion NewRotation = Quaternion.LookRotation(Direction);
+        Npc.MoveRotation(NewRotation);
+
+        if (Distance > 2 )
+         {
+            Movement(Direction, MoveSpeed);
+         }
     }
 
-    IEnumerator Wander()
+
+    public void Movement(Vector3 Move, float MS)
     {
-        int rotTime = Random.Range(1, 3);
-        int rotateWait = Random.Range(1, 4);
-        int rotateLorR = Random.Range(0, 3);
-        int walkWait = Random.Range(1, 4);
-        int walkTime = Random.Range(1, 5);
-
-        _isWandering = true;
-
-        yield return new WaitForSeconds(walkWait);
-        _isWalking = true;
-        yield return new WaitForSeconds(walkTime);
-        _isWalking = false;
-        yield return new WaitForSeconds(rotateWait);
-
-        if(rotateLorR == 1)
-        {
-            _isRotatingRight = true;
-            yield return new WaitForSeconds(rotTime);
-            _isRotatingRight = false;
-        }
-
-        if(rotateLorR == 1)
-        {
-            _isRotatingLeft = true;
-            yield return new WaitForSeconds(rotTime);
-            _isRotatingLeft = false;
-        }
-        _isWandering = false;
+        Npc.MovePosition(Npc.position + Move.normalized * MS * Time.deltaTime);
     }
 
 }
