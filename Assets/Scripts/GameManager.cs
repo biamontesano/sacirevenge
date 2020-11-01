@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case State.MENU:
+                Time.timeScale = 0;
                 highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
                 panelMenu.SetActive(true);
                 break;
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
                 SwitchState(State.PLAY);
                 break;
             case State.PLAY:
+                Time.timeScale = 1;
                 break;
             case State.PAUSE:
                 panelPause.SetActive(true);
@@ -104,6 +106,10 @@ public class GameManager : MonoBehaviour
                 {
                     Time.timeScale = 0;
                     SwitchState(State.PAUSE);
+                }
+                if(playerPrefab == null)
+                {
+                    SwitchState(State.GAMEOVER);
                 }
                 break;
             case State.PAUSE:
