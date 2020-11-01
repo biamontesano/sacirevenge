@@ -5,38 +5,26 @@ using UnityEngine.AI;
 
 public class NpcsController : MonoBehaviour
 {
-
-    public float MoveSpeed = 2;
-    private Rigidbody Npc;
-    public GameObject Point;
-    private Vector3 Direction;
-    private float Distance;
-
-    // Start is called before the first frame update
+    public float sensorLength = 5.0f;
+    public float speed = 10.0f;
     void Start()
     {
-        Npc = GetComponent<Rigidbody>();
+        
     }
-    
-    private void FixedUpdate()
+
+    void Update()
     {
-        Direction = Point.transform.position - Npc.transform.position;
-        Distance = Vector3.Distance(transform.position, Point.transform.position);
+        transform.position += transform.right * speed * Time.deltaTime;
 
-
-        Quaternion NewRotation = Quaternion.LookRotation(Direction);
-        Npc.MoveRotation(NewRotation);
-
-        if (Distance > 2 )
-         {
-            Movement(Direction, MoveSpeed);
-         }
     }
 
-
-    public void Movement(Vector3 Move, float MS)
+    void OnDrawGizmos()
     {
-        Npc.MovePosition(Npc.position + Move.normalized * MS * Time.deltaTime);
+        Gizmos.DrawRay(transform.position, transform.right * (sensorLength + transform.localScale.x));
+        Gizmos.DrawRay(transform.position, -transform.right * (sensorLength + transform.localScale.x));
+        Gizmos.DrawRay(transform.position, transform.forward * (sensorLength + transform.localScale.z));
+        Gizmos.DrawRay(transform.position, -transform.forward * (sensorLength + transform.localScale.z));
     }
+
 
 }
