@@ -5,62 +5,46 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject ballPrefab;
     public GameObject playerPrefab;
-    public Text scoreText;
-    public Text ballText;
-    public Text levelText;
+    public GameObject npcPrefab;
+    public GameObject npcHomePrefab;
 
+    public Text scoreText;
     public Text highscoreText;
 
     public GameObject panelMenu;
-    public GameObject panelPlayMenu;
+    public GameObject panelPlay;
     public GameObject panelLevelCompleted;
+    public GameObject panelPause;
     public GameObject panelGameOver;
-
-    public GameObject[] levels;
 
     public static GameManager Instance { get; private set; }
 
-    public enum State { MENU, INIT, PLAY, LEVELCOMPLETED, LOADLEVEL, GAMEOVER }
-
-    private GameObject _currentBall;
-
-    private GameObject _currentLevel;
+    public enum State { MENU, INIT, PLAY, PAUSE, GAMEOVER }
+    State _state;
 
     bool _isSwitchingState;
-    State _state;
+
 
     private int _score;
     public int Score
     {
         get { return _score; }
         set { _score = value; 
-            scoreText.text = "Score: " + _score;
-        }
-    }
-    
-    private int _level;
-    public int Level
-    {
-        get { return _level; }
-        set { _level = value; 
-            levelText.text = "Level: " + _level;
-        }
-    }
-    
-    private int _balls;
-    public int Balls
-    {
-        get { return _balls; }
-        set { _balls = value; 
-            ballText.text = "Balls: " + _balls;
+            scoreText.text = "SCORE " + _score;
         }
     }
 
-    public void PlayClick()
+    
+    public void PlayClicked()
     {
         SwitchState(State.INIT);
+    }
+
+    public void UnPauseClicked()
+    {
+        Time.timeScale = 1;
+        SwitchState(State.PLAY);
     }
 
     void Start()
@@ -75,7 +59,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SwitchDelay(newState, delay));
     }
 
-    IEnumerator SwitchDelay(State newState, float delay )
+    IEnumerator SwitchDelay(State newState, float delay)
     {
         _isSwitchingState = true;
         yield return new WaitForSeconds(delay);
@@ -90,42 +74,24 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case State.MENU:
-                Cursor.visible = true;
                 highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
                 panelMenu.SetActive(true);
                 break;
             case State.INIT:
-                Cursor.visible = false;
-                panelPlayMenu.SetActive(true);
+                panelPlay.SetActive(true);
                 Score = 0;
-                Level = 0;
-                Balls = 3;
-                Instantiate(playerPrefab);
-                SwitchState(State.LOADLEVEL);
+                Instantiate(npcPrefab);
+                Instantiate(npcHomePrefab);
+                SwitchState(State.PLAY);
                 break;
             case State.PLAY:
                 break;
-            case State.LEVELCOMPLETED:
-                Destroy(_currentBall);
-                Destroy(_currentLevel);
-                Level++;
-                SwitchState(State.LOADLEVEL);
-                panelLevelCompleted.SetActive(true);
-                break;
-            case State.LOADLEVEL:
-                if( Level >= levels.Length)
-                {
-                    SwitchState(State.GAMEOVER);
-                }
-                else
-                {
-                    _currentLevel = Instantiate(levels[Level]);
-                    SwitchState(State.PLAY);
-                }
+            case State.PAUSE:
+                panelPause.SetActive(true);
+
                 break;
             case State.GAMEOVER:
-                if(Score > PlayerPrefs.GetInt("highscore"))
-                {
+                if (Score > PlayerPrefs.GetInt("highscore")) {
                     PlayerPrefs.SetInt("highscore", Score);
                 }
                 panelGameOver.SetActive(true);
@@ -142,34 +108,21 @@ public class GameManager : MonoBehaviour
             case State.INIT:
                 break;
             case State.PLAY:
-            if(_currentBall == null)
-            {
-                if(Balls > 0)
+                if(Input.GetKeyDown(KeyCode.P))
                 {
-                    _currentBall = Instantiate(ballPrefab);
+                    Time.timeScale = 0;
+                    SwitchState(State.PAUSE);
                 }
-                else
-                {
-                    SwitchState(State.GAMEOVER);
-                }
-                if(_currentLevel != null && _currentLevel.transform.childCount == 0 && !_isSwitchingState)
-                {
-                    SwitchState(State.LEVELCOMPLETED);
-                }
-            }
                 break;
-            case State.LEVELCOMPLETED:
-                break;
-            case State.LOADLEVEL:
+            case State.PAUSE:
                 break;
             case State.GAMEOVER:
-            if(Input.anyKeyDown)
-            {
-                SwitchState(State.MENU);
-            }
+                if(Input.anyKeyDown)
+                {
+                    SwitchState(State.MENU); 
+                }
                 break;
         }
-        
     }
 
     void EndState()
@@ -181,16 +134,14 @@ public class GameManager : MonoBehaviour
                 break;
             case State.INIT:
                 break;
+            case State.PAUSE:
+                panelPause.SetActive(false);
+                break;
             case State.PLAY:
                 break;
-            case State.LEVELCOMPLETED:
-                panelLevelCompleted.SetActive(false);
-                break;
-            case State.LOADLEVEL:
-                break;
             case State.GAMEOVER:
-                panelPlayMenu.SetActive(false);
-                panelGameOver.SetActive(true);
+                panelPlay.SetActive(false);
+                panelGameOver.SetActive(false);
                 break;
         }
 

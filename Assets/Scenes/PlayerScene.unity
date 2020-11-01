@@ -252,8 +252,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.9404135, y: 1, z: 1.5133221}
+  m_Center: {x: 0.043155193, y: 0, z: 0.05376923}
 --- !u!23 &463785884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463785882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.76, y: 1.98, z: 0.05}
+  m_LocalPosition: {x: -8.76, y: 1.5, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -763,7 +763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592597873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 3.63, z: 2.31}
+  m_LocalPosition: {x: 0.1, y: 3.35, z: 2.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1014091237}
@@ -792,6 +792,7 @@ MonoBehaviour:
   PodeUsar: 0
   Atacando: 0
   Distancia: 0
+  sugar: 0
   anim: {fileID: 538003500}
 --- !u!95 &1592597880
 Animator:
