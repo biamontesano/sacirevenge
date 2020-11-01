@@ -10,24 +10,21 @@ public class GameManager : MonoBehaviour
     public GameObject npcHomePrefab;
 
     public Text scoreText;
-    public Text livesText;
-    public Text levelText;
     public Text highscoreText;
 
     public GameObject panelMenu;
     public GameObject panelPlay;
     public GameObject panelLevelCompleted;
+    public GameObject panelPause;
     public GameObject panelGameOver;
-    public GameObject [] levels;
 
     public static GameManager Instance { get; private set; }
 
-    public enum State { MENU, INIT, PLAY, LEVELCOMPLETED, LOADLEVEL, GAMEOVER }
+    public enum State { MENU, INIT, PLAY, PAUSE, GAMEOVER }
     State _state;
 
-    GameObject _currentLife;
-    GameObject _currentLevel;
     bool _isSwitchingState;
+
 
     private int _score;
     public int Score
@@ -37,28 +34,19 @@ public class GameManager : MonoBehaviour
             scoreText.text = "SCORE " + _score;
         }
     }
-    
-    private int _level;
-    public int Level
-    {
-        get { return _level; }
-        set { _level = value; 
-            levelText.text = "Level " + _level;
-        }
-    }
-    
-    private int _lives;
-    public int Lives
-    {
-        get { return _lives; }
-        set { _lives = value; 
-            livesText.text = "Vidas " + _lives;}
-    }
+
     
     public void PlayClicked()
     {
         SwitchState(State.INIT);
     }
+
+    public void UnPauseClicked()
+    {
+        Time.timeScale = 1;
+        SwitchState(State.PLAY);
+    }
+
     void Start()
     {
         Instance = this;
@@ -92,35 +80,15 @@ public class GameManager : MonoBehaviour
             case State.INIT:
                 panelPlay.SetActive(true);
                 Score = 0;
-                Level = 0;
-                Lives = 3;
-                if(_currentLevel != null)
-                {
-                    Destroy(_currentLevel);
-                }
-                SwitchState(State.LOADLEVEL);
+                Instantiate(npcPrefab);
+                Instantiate(npcHomePrefab);
+                SwitchState(State.PLAY);
                 break;
             case State.PLAY:
                 break;
-            case State.LEVELCOMPLETED:
-                Destroy(_currentLife);
-                Destroy(_currentLevel);
-                Level++;
-                panelLevelCompleted.SetActive(true);
-                SwitchState(State.LOADLEVEL);
-                break;
-            case State.LOADLEVEL:
-                Instantiate(npcPrefab);
-                Instantiate(npcHomePrefab);
-                if(Level >= levels.Length)
-                {
-                    SwitchState(State.GAMEOVER);
-                }
-                else
-                {
-                    _currentLevel = Instantiate(levels[Level]);
-                    SwitchState(State.PLAY);
-                }
+            case State.PAUSE:
+                panelPause.SetActive(true);
+
                 break;
             case State.GAMEOVER:
                 if (Score > PlayerPrefs.GetInt("highscore")) {
@@ -140,35 +108,18 @@ public class GameManager : MonoBehaviour
             case State.INIT:
                 break;
             case State.PLAY:
-                if(_currentLife == null)
+                if(Input.GetKeyDown(KeyCode.P))
                 {
-                    if(Lives < 0)
-                    {
-                        SwitchState(State.GAMEOVER);
-                    }
-                    // if(Lives > 0)
-                    // {
-                    //     _currentLife = Instantiate(playerPrefab);
-                    // }
-                    // else
-                    // {
-                    //     SwitchState(State.GAMEOVER);
-                    // }
-                }
-
-                if(_currentLevel != null && _currentLevel.transform.childCount == 0 && !_isSwitchingState)
-                {
-                    SwitchState(State.LEVELCOMPLETED);
+                    Time.timeScale = 0;
+                    SwitchState(State.PAUSE);
                 }
                 break;
-            case State.LEVELCOMPLETED:
-                break;
-            case State.LOADLEVEL:
+            case State.PAUSE:
                 break;
             case State.GAMEOVER:
                 if(Input.anyKeyDown)
                 {
-                SwitchState(State.MENU); 
+                    SwitchState(State.MENU); 
                 }
                 break;
         }
@@ -183,12 +134,10 @@ public class GameManager : MonoBehaviour
                 break;
             case State.INIT:
                 break;
+            case State.PAUSE:
+                panelPause.SetActive(false);
+                break;
             case State.PLAY:
-                break;
-            case State.LEVELCOMPLETED:
-                panelLevelCompleted.SetActive(false);
-                break;
-            case State.LOADLEVEL:
                 break;
             case State.GAMEOVER:
                 panelPlay.SetActive(false);
