@@ -145,7 +145,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Atacando == true && objetoDeColisao.tag == "Destrutivel")
         {
-            Destroy(objetoDeColisao.gameObject);
+            DestroyOnTrigger.Instance.hits--;
+            if (DestroyOnTrigger.Instance.hits <= 0)
+            {
+                Destroy(objetoDeColisao.gameObject);
+                GameManager.Instance.Score += DestroyOnTrigger.Instance.points;
+            }
+                
         }
     }
 
