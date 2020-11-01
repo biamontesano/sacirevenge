@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject npcPrefab;
     public GameObject npcHomePrefab;
-
     public Text scoreText;
     public Text highscoreText;
 
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
             case State.GAMEOVER:
                 if(Input.anyKeyDown)
                 {
-                    SwitchState(State.MENU); 
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
                 break;
         }
