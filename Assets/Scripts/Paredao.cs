@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Paredao : MonoBehaviour
 {
 
     public Transform tile1Obj;
-    public GameObject MoveSpeed;
     Vector3 _nextTileSpawn;
     public bool Cruzou;
+
 
     private void OnTriggerStay(Collider paredeColisao)
     {

@@ -35,7 +35,19 @@ public class GameFlow : MonoBehaviour
         Player = GameObject.FindWithTag("Jogador");
         Paredao = GameObject.FindWithTag("BateuCriou");
     }
+    private void FixedUpdate ()
+    {
+        Distancia = Vector3.Distance(Paredao.transform.position, Player.transform.position);
 
+        if (Distancia < 0.80)
+        {
+           
+        }
+        if (Distancia > 5)
+        {
+
+        }
+    }
 
     
     IEnumerator spawnTile()

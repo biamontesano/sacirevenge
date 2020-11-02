@@ -8,6 +8,14 @@ public class EnemySpawn : MonoBehaviour
     private float contadorDeTempo = 0;
     public float tempoSpawn = 0;
 
+
+    private void Start()
+    {
+
+    }
+
+
+    // Update is called once per frame
     void Update()
     {
         contadorDeTempo += Time.deltaTime;
