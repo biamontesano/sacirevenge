@@ -9,21 +9,33 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
-    public float jumpForce;
     public CharacterController controller;
     public float gravityScale;
     public float rotSpeed = 90;
-    public int score;
+    public float CooldownSkill;
+    public float DuracaoTornado;
+    public float GarrafaTime;
     public GameObject Enemy;
-    public bool PodeUsar;
     private Vector3 moveDirection;
-    public bool Atacando;
-    public float Distancia;
-    public bool sugar;
 
+
+    //Escondido no Inspector
+    
+    [HideInInspector]
     public Animator anim;
+    [HideInInspector]
+    public bool Atacando;
+    [HideInInspector]
+    public bool sugar;
+    [HideInInspector]
+    public bool PodeUsar;
+    [HideInInspector]
+    public int score;
+    [HideInInspector]
+    public float Distancia;
+    //**********************
 
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,24 +69,24 @@ public class PlayerController : MonoBehaviour
         anim.SetInteger("Score", score);
 
         // Skill Tornado
-        if (Input.GetButtonDown("Jump") && PodeUsar == true)
+        if (Input.GetKey(KeyCode.E) && PodeUsar == true)
         {
             Physics.IgnoreCollision(controller, Enemy.GetComponent<Collider>(), true);
             SkillDuracao();
             PodeUsar = false;
-            StartCoroutine(SkillColdown(5f)); //Precisa Configurar o Tempo.
+            StartCoroutine(SkillCooldown(CooldownSkill)); //Precisa Configurar o Tempo.
         }
 
-        IEnumerator SkillColdown(float coldown)
+        IEnumerator SkillCooldown(float Cooldown)
         {
-            yield return new WaitForSeconds(coldown);
+            yield return new WaitForSeconds(Cooldown);
             Physics.IgnoreCollision(controller, Enemy.GetComponent<Collider>(), false);
             PodeUsar = true;
         }
 
 
         //Animação de Ataque
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetButtonDown("Fire1"))
         {
             anim.SetBool("Attack", true);
             Atacando = true;
@@ -97,15 +109,18 @@ public class PlayerController : MonoBehaviour
         //SaciGarrafa - Puxa para Garrafa e Destroi o Jogador.
         Distancia = Vector3.Distance(transform.position, Enemy.transform.position);
 
-        if (Distancia < 2 && PodeUsar == true )
+        if (Distancia < 2.4 && PodeUsar == true )
         {
             sugar = true;
             StartCoroutine(Sugando());
+            moveSpeed = 4;
         }
         else
         {
             sugar = false;
+            
             anim.SetBool("Sugando?", false);
+            moveSpeed = 6;
         }
     }
 
@@ -114,11 +129,11 @@ public class PlayerController : MonoBehaviour
     public void SkillDuracao()
     {
         anim.SetBool("SkillTornado", true);
-        StartCoroutine(DuracaoSkill(4f)); //Precisa Configurar o Tempo.
+        StartCoroutine(DuracaoSkill(DuracaoTornado)); //Precisa Configurar o Tempo.
 
         IEnumerator DuracaoSkill(float duracao)
         {
-            yield return new WaitForSeconds(duracao);
+            yield return new WaitForSecondsRealtime(duracao);
             PodeUsar = false;
             anim.SetBool("SkillTornado", false);
         }
@@ -128,7 +143,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator Sugando()
     {
         anim.SetBool("Sugando?", true);
-        yield return new WaitForSecondsRealtime(4); //Precisa Configurar o Tempo.
+        yield return new WaitForSecondsRealtime(GarrafaTime); //Precisa Configurar o Tempo.
         if(sugar == true)
         {
             Destroy(gameObject);
@@ -143,9 +158,15 @@ public class PlayerController : MonoBehaviour
     //Destruindo Objetos.
     private void OnTriggerEnter(Collider objetoDeColisao)
     {
-        if (Atacando == true && objetoDeColisao.tag == "Destrutivel")
+        if (Atacando == true || objetoDeColisao.tag == "Destrutivel")
         {
-            Destroy(objetoDeColisao.gameObject);
+            DestroyOnTrigger.Instance.hits--;
+            if (DestroyOnTrigger.Instance.hits <= 0)
+            {
+                Destroy(objetoDeColisao.gameObject);
+                GameManager.Instance.Score += DestroyOnTrigger.Instance.points;
+            }
+                
         }
     }
 

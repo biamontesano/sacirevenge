@@ -41,17 +41,18 @@ public class GameFlow : MonoBehaviour
         // Repete itemOne e cenário
         _randZ = Random.Range(-1, 2);
         _nextDesctructibleItemOneSpawn = _nextTileSpawn;
-        _nextDesctructibleItemOneSpawn.y = -6.69f;
+        _nextDesctructibleItemOneSpawn.y = 1.157f;
         _nextDesctructibleItemOneSpawn.z = _randZ;
         Instantiate(tile1Obj, _nextTileSpawn, tile1Obj.rotation);
         // Instantiate(npcHomeObj, _nextNpcHomeSpawn, npcHomeObj.rotation);
         Instantiate(desctructibleItemOneObj, _nextDesctructibleItemOneSpawn, desctructibleItemOneObj.rotation);
         
         // Repete itemTwo
-        _nextTileSpawn.x += 48;
+        _nextTileSpawn.x += 48.8f;
+        _nextTileSpawn.y = 1;
         _randZ = Random.Range(-1, 2);
         _nextDesctructibleItemTwoSpawn.x = _nextTileSpawn.x;
-        _nextDesctructibleItemTwoSpawn.y = -6;
+        _nextDesctructibleItemTwoSpawn.y = 1.96f;
         _nextDesctructibleItemTwoSpawn.z = _randZ;
         Instantiate(tile1Obj, _nextTileSpawn, tile1Obj.rotation);
         // Instantiate(npcHomeObj, _nextNpcHomeSpawn, npcHomeObj.rotation);
@@ -73,7 +74,7 @@ public class GameFlow : MonoBehaviour
         }
 
         _nextDesctructibleItemThreeSpawn.x = _nextTileSpawn.x;
-        _nextDesctructibleItemThreeSpawn.y = -6.56f;
+        _nextDesctructibleItemThreeSpawn.y = 1.323f;
         _nextDesctructibleItemThreeSpawn.z = _randZ;
         Instantiate(desctructibleItemThreeObj, _nextDesctructibleItemThreeSpawn, desctructibleItemThreeObj.rotation);
         
@@ -93,7 +94,7 @@ public class GameFlow : MonoBehaviour
         }
 
         _nextNpcSpawn.x = _nextTileSpawn.x;
-        _nextNpcSpawn.y = -6.38f;
+        _nextNpcSpawn.y = 1;
         _nextNpcSpawn.z = _randZ;
         Instantiate(npcObj, _nextNpcSpawn, npcObj.rotation);
 

@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject panelMenu;
     public GameObject panelPlay;
-    public GameObject panelLevelCompleted;
     public GameObject panelPause;
     public GameObject panelGameOver;
 
@@ -22,9 +21,6 @@ public class GameManager : MonoBehaviour
 
     public enum State { MENU, INIT, PLAY, PAUSE, GAMEOVER }
     State _state;
-
-    bool _isSwitchingState;
-
 
     private int _score;
     public int Score
@@ -61,12 +57,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SwitchDelay(State newState, float delay)
     {
-        _isSwitchingState = true;
         yield return new WaitForSeconds(delay);
         EndState();
         _state = newState;
         BeginState(newState);
-        _isSwitchingState = false;
     }
 
     void BeginState(State newState)
@@ -74,17 +68,17 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case State.MENU:
+                Time.timeScale = 0;
                 highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
                 panelMenu.SetActive(true);
                 break;
             case State.INIT:
                 panelPlay.SetActive(true);
                 Score = 0;
-                Instantiate(npcPrefab);
-                Instantiate(npcHomePrefab);
                 SwitchState(State.PLAY);
                 break;
             case State.PLAY:
+                Time.timeScale = 1;
                 break;
             case State.PAUSE:
                 panelPause.SetActive(true);
@@ -112,6 +106,10 @@ public class GameManager : MonoBehaviour
                 {
                     Time.timeScale = 0;
                     SwitchState(State.PAUSE);
+                }
+                if(playerPrefab == null)
+                {
+                    SwitchState(State.GAMEOVER);
                 }
                 break;
             case State.PAUSE:

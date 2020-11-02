@@ -7,6 +7,9 @@ TagManager:
   - DesctructibleItem
   - Inimigo
   - Jogador
+  - Destrutivel
+  - Cenario
+  - SpawnInimigo
   layers:
   - Default
   - TransparentFX

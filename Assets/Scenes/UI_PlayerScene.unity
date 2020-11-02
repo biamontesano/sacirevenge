@@ -1539,7 +1539,7 @@ MonoBehaviour:
   desctructibleItemOneObj: {fileID: 3379739093955555003, guid: c0e4001bf2e71c7419fca75e8e886fd4, type: 3}
   desctructibleItemTwoObj: {fileID: 4286013546576469936, guid: 69ccff729fbe9934a94e99593dd0e307, type: 3}
   desctructibleItemThreeObj: {fileID: 8086062260375061022, guid: 37d98e6c783fe324495bddf450597af8, type: 3}
-  npcObj: {fileID: 2291156387699321917, guid: 7fc6b47ba7cc020489f79fe03ccc03c6, type: 3}
+  npcObj: {fileID: 732706592686430705, guid: f3fbd83f590217f43be7d21e58870cef, type: 3}
   npcHomeObj: {fileID: 2227265795399601426, guid: 9b9e6c9f415852141bbd30b09df65a58, type: 3}
 --- !u!4 &1458945258
 Transform:
