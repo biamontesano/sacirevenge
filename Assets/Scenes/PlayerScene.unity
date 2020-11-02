@@ -352,6 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 2
   Player: {fileID: 1592597873}
+  animInimigo: {fileID: 0}
 --- !u!136 &477271883
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -667,6 +668,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e71a26001a94fa54e8dd39078cbbf45c, type: 3}
   m_PrefabInstance: {fileID: 1014091236}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1122846492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122846494}
+  - component: {fileID: 1122846493}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1122846493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122846492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20c84522a1a3864aa656e1266e271c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1122846494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122846492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1, y: -1, z: -1.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1592597873
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,16 +827,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 200
   controller: {fileID: 1592597874}
   gravityScale: 1
   rotSpeed: 90
-  score: 21
+  CooldownSkill: 0
+  DuracaoTornado: 0
+  GarrafaTime: 0
   Enemy: {fileID: 477271881}
-  PodeUsar: 0
-  Atacando: 0
-  Distancia: 0
   anim: {fileID: 538003500}
+  Atacando: 0
+  sugar: 0
+  PodeUsar: 0
+  score: 21
+  Distancia: 0
 --- !u!95 &1592597880
 Animator:
   serializedVersion: 3
