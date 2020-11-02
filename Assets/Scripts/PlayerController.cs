@@ -156,19 +156,19 @@ public class PlayerController : MonoBehaviour
 
 
     //Destruindo Objetos.
-    private void OnTriggerEnter(Collider objetoDeColisao)
-    {
-        if (Atacando == true || objetoDeColisao.tag == "Destrutivel")
-        {
-            DestroyOnTrigger.Instance.hits--;
-            if (DestroyOnTrigger.Instance.hits <= 0)
-            {
-                Destroy(objetoDeColisao.gameObject);
-                GameManager.Instance.Score += DestroyOnTrigger.Instance.points;
-            }
+    // private void OnTriggerEnter(Collider objetoDeColisao)
+    // {
+    //     if (Atacando == true || objetoDeColisao.tag == "Destrutivel")
+    //     {
+    //         DestroyOnTrigger.Instance.hits--;
+    //         if (DestroyOnTrigger.Instance.hits <= 0)
+    //         {
+    //             Destroy(objetoDeColisao.gameObject);
+    //             GameManager.Instance.Score += DestroyOnTrigger.Instance.points;
+    //         }
                 
-        }
-    }
+    //     }
+    // }
 
 
 }
