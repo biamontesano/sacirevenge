@@ -129,28 +129,12 @@ public class GameManager : MonoBehaviour
         switch (_state)
         {
             case State.COVER:
-                if(Input.anyKeyDown)
-                {
-                    SwitchState(State.INTRO1);
-                }
                 break;
             case State.INTRO1:
-                if(Input.anyKeyDown)
-                {
-                    SwitchState(State.INTRO2);
-                }
                 break;
             case State.INTRO2:
-                if(Input.anyKeyDown)
-                {
-                    SwitchState(State.MENU);
-                }
                 break;
             case State.MENU:
-                if(Input.anyKeyDown)
-                {
-                    SwitchState(State.INIT);
-                }
                 break;
             case State.INIT:
                 break;

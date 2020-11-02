@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +18,11 @@ public class GameFlow : MonoBehaviour
     public Transform npcObj;
     Vector3 _nextNpcSpawn;
     
+    
+    public Transform npcHomeObj;
+    Vector3 _nextNpcHomeSpawn;
+    
+    int _randChoice;
 
     void Start()
     {
@@ -43,9 +48,8 @@ public class GameFlow : MonoBehaviour
         Instantiate(desctructibleItemOneObj, _nextDesctructibleItemOneSpawn, desctructibleItemOneObj.rotation);
         
         // Repete itemTwo
-        _nextTileSpawn.x += 141;
-        _nextTileSpawn.y = 13.71383f;
-        _nextTileSpawn.z = -9.05893f;
+        _nextTileSpawn.x += 48.8f;
+        _nextTileSpawn.y = 1;
         _randZ = Random.Range(-1, 2);
         _nextDesctructibleItemTwoSpawn.x = _nextTileSpawn.x;
         _nextDesctructibleItemTwoSpawn.y = 1.96f;
@@ -90,11 +94,11 @@ public class GameFlow : MonoBehaviour
         }
 
         _nextNpcSpawn.x = _nextTileSpawn.x;
-        _nextNpcSpawn.y = 0.5f;
+        _nextNpcSpawn.y = 1;
         _nextNpcSpawn.z = _randZ;
         Instantiate(npcObj, _nextNpcSpawn, npcObj.rotation);
 
-        _nextTileSpawn.x += 141;
+        _nextTileSpawn.x += 48;
         StartCoroutine(spawnTile());
     }
 }

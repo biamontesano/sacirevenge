@@ -5,124 +5,38 @@ using UnityEngine.AI;
 
 public class NpcsController : MonoBehaviour
 {
-    // public float MoveSpeed = 2;
-    // private Rigidbody Enemy;
-    // public GameObject Player;
-    // private Vector3 Direction;
-    // private float Distance;
 
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-    //     Enemy = GetComponent<Rigidbody>();
-    //     Player = GameObject.FindWithTag("Jogador");
-    // }
+    public float MoveSpeed = 2;
+    private Rigidbody Npc;
+    public GameObject Player;
+    private Vector3 Direction;
+    private float Distance;
 
-    // private void FixedUpdate()
-    // {
-    //     Direction = Player.transform.position - Enemy.transform.position;
-    //     Distance = Vector3.Distance(transform.position, Player.transform.position);
-
-
-    //     Quaternion NewRotation = Quaternion.LookRotation(Direction);
-    //     Enemy.MoveRotation(NewRotation);
-
-    //     if (Distance > 2 )
-    //      {
-    //         Movement(Direction, MoveSpeed);
-    //      }
-    // }
-
-    // public void Movement(Vector3 Move, float MS)
-    // {
-    //     Enemy.MovePosition(Enemy.position + Move.normalized * MS * Time.deltaTime);
-    // }
-
-    public float sensorLength = 5.0f;
-    public float speed = 10.0f;
-    float directionValue = 1.0f;
-    float turnValue = 0.0f;
-    public float turnSpeed = 50.0f;
-    Collider myCollider;
+    // Start is called before the first frame update
     void Start()
     {
-        myCollider = transform.GetComponent<Collider>();
+        Npc = GetComponent<Rigidbody>();
+        Player = GameObject.FindWithTag("Jogador");
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        // RaycastHit hit;
-        // int flag = 0;
+        Direction = Player.transform.position - Npc.transform.position;
+        Distance = Vector3.Distance(transform.position, Player.transform.position);
 
-        //Right Sensor
-        // if(Physics.Raycast(transform.position, transform.right, out hit, (sensorLength + transform.localScale.x)))
-        // {
-        //     if(hit.collider.tag != "Obstacle" || hit.collider == myCollider)
-        //     {
-        //         return;
-        //     }
-        //     turnValue -= 1;
-        //     flag++;
-        // }
 
-        // //Left Sensor
-        // if(Physics.Raycast(transform.position, -transform.right, out hit, (sensorLength + transform.localScale.x)))
-        // {
-        //     if(hit.collider.tag != "Obstacle" || hit.collider == myCollider)
-        //     {
-        //         return;
-        //     }
-        //     turnValue += 1;
-        //     flag++;
-        // }
+        Quaternion NewRotation = Quaternion.LookRotation(Direction);
+        Npc.MoveRotation(NewRotation);
 
-        // //Front Sensor
-        // if(Physics.Raycast(transform.position, transform.forward, out hit, (sensorLength + transform.localScale.z)))
-        // {
-        //     if(hit.collider.tag != "Obstacle" || hit.collider == myCollider)
-        //     {
-        //         return;
-        //     }
-
-        //     if(directionValue == 1.0f)
-        //     {
-        //         directionValue = -1;
-        //     }
-        //     flag++;
-        // }
-
-        // //Back Sensor
-        // if(Physics.Raycast(transform.position, -transform.right, out hit, (sensorLength + transform.localScale.z)))
-        // {
-        //     if(hit.collider.tag != "Obstacle" || hit.collider == myCollider)
-        //     {
-        //         return;
-        //     }
-        //     if(directionValue == -1.0f)
-        //     {
-        //         directionValue = 1;
-        //     }
-        //     flag++;
-        // }
-
-        // if(flag == 0)
-        // {
-        //     turnValue = 0;
-        // }
-
-        transform.Rotate(Vector3.up * (turnSpeed * turnValue) * Time.deltaTime);
-
-        transform.position += transform.forward * (speed*directionValue) * Time.deltaTime;
-
+        if (Distance > 2 )
+         {
+            Movement(Direction, MoveSpeed);
+         }
     }
 
-    void OnDrawGizmos()
+    public void Movement(Vector3 Move, float MS)
     {
-        Gizmos.DrawRay(transform.position, transform.forward * (sensorLength + transform.localScale.z));
-        Gizmos.DrawRay(transform.position, -transform.forward * (sensorLength + transform.localScale.z));
-        Gizmos.DrawRay(transform.position, transform.right * (sensorLength + transform.localScale.x));
-        Gizmos.DrawRay(transform.position, -transform.right * (sensorLength + transform.localScale.x));
+        Npc.MovePosition(Npc.position + Move.normalized * MS * Time.deltaTime);
     }
-
 
 }
