@@ -16,12 +16,12 @@ public class PlayerController : MonoBehaviour
     public float DuracaoTornado;
     public float GarrafaTime;
     public GameObject Enemy;
+    public bool Colisao;
     private Vector3 moveDirection;
 
 
     //Escondido no Inspector
 
-    [HideInInspector]
     public Animator anim;
     [HideInInspector]
     public bool Atacando;
@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         Enemy = GameObject.FindWithTag("Inimigo");
         PodeUsar = true;
+        Colisao = false;
+        Physics.IgnoreCollision(controller, Enemy.GetComponent<Collider>(), Colisao);
     }
 
     // Update is called once per frame
@@ -66,36 +68,34 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
         //**********************Movimentação Personagem***************//
         //??
-        anim.SetInteger("Score", score);
 
         // Skill Tornado
         if (Input.GetKey(KeyCode.E) && PodeUsar == true)
         {
-            Physics.IgnoreCollision(controller, Enemy.GetComponent<Collider>(), true);
+            Colisao = true;
             SkillDuracao();
             PodeUsar = false;
             StartCoroutine(SkillCooldown(CooldownSkill)); //Precisa Configurar o Tempo.
-        }
+        } 
 
         IEnumerator SkillCooldown(float Cooldown)
         {
             yield return new WaitForSeconds(Cooldown);
-            Physics.IgnoreCollision(controller, Enemy.GetComponent<Collider>(), false);
             PodeUsar = true;
         }
 
 
         //Animação de Ataque
-        if (Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("Attack", true);
-            Atacando = true;
-        }
-        else
-        {
-            anim.SetBool("Attack", false);
-            Atacando = false;
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    anim.SetBool("Attack", true);
+        //    Atacando = true;
+        //}
+        //else
+        //{
+        //    anim.SetBool("Attack", false);
+        //    Atacando = false;
+        //}
 
         //Animação Movimentação (A/S/W/D)
         if (mH != 0 || mV != 0)
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         //SaciGarrafa - Puxa para Garrafa e Destroi o Jogador.
         Distancia = Vector3.Distance(transform.position, Enemy.transform.position);
 
-        if (Distancia < 2.4 && PodeUsar == true)
+        if (Distancia < 3.4 && PodeUsar == true)
         {
             sugar = true;
             StartCoroutine(Sugando());
@@ -137,6 +137,7 @@ public class PlayerController : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(duracao);
             PodeUsar = false;
+            Colisao = false;
             anim.SetBool("SkillTornado", false);
         }
     }
@@ -156,19 +157,4 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
-    //Destruindo Objetos.
-    // private void OnTriggerEnter(Collider objetoDeColisao)
-    // {
-    //     if (Atacando == true || objetoDeColisao.tag == "Destrutivel")
-    //     {
-    //         DestroyOnTrigger.Instance.hits--;
-    //         if (DestroyOnTrigger.Instance.hits <= 0)
-    //         {
-    //             Destroy(objetoDeColisao.gameObject);
-    //             GameManager.Instance.Score += DestroyOnTrigger.Instance.points;
-    //         }
-    //     }
-    // }
-
 }
