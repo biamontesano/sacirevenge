@@ -4,12 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - DesctructibleItem
+  - Destrutivel
   - Inimigo
   - Jogador
-  - Destrutivel
-  - Cenario
-  - SpawnInimigo
+  - Obstacle
   layers:
   - Default
   - TransparentFX
