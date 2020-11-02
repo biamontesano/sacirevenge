@@ -47,9 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f6f371c66612b4e8dec1ce6c4d07e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensorLength: 5
-  speed: 10
-  turnSpeed: 50
+  MoveSpeed: 2
+  Player: {fileID: 0}
 --- !u!1001 &178185958149011152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.78999996
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -103,19 +102,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
       propertyPath: m_Name
-      value: Crianca1
+      value: Crianca1 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
