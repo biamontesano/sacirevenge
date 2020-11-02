@@ -8,10 +8,12 @@ public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject npcPrefab;
-    public GameObject npcHomePrefab;
     public Text scoreText;
     public Text highscoreText;
 
+    public GameObject panelCover;
+    public GameObject panelIntro1;
+    public GameObject panelIntro2;
     public GameObject panelMenu;
     public GameObject panelPlay;
     public GameObject panelPause;
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
 
-    public enum State { MENU, INIT, PLAY, PAUSE, GAMEOVER }
+    public enum State { COVER, INTRO1, INTRO2, MENU, INIT, PLAY, PAUSE, GAMEOVER }
     State _state;
 
     private int _score;
@@ -43,10 +45,30 @@ public class GameManager : MonoBehaviour
         SwitchState(State.PLAY);
     }
 
+    public void GoToGameOver()
+    {
+        SwitchState(State.GAMEOVER);
+    }
+
+    public void GetToIntro1()
+    {
+        SwitchState(State.INTRO1);
+    }
+
+    public void GetToIntro2()
+    {
+        SwitchState(State.INTRO2);
+    }
+
+    public void GetToMenu()
+    {
+        SwitchState(State.MENU);
+    }
+
     void Start()
     {
         Instance = this;
-        SwitchState(State.MENU);
+        SwitchState(State.COVER);
         // PlayerPrefs.DeleteKey("highscore");
     }
 
@@ -67,8 +89,17 @@ public class GameManager : MonoBehaviour
     {
         switch (newState)
         {
-            case State.MENU:
+            case State.COVER:
                 Time.timeScale = 0;
+                panelCover.SetActive(true);
+                break;
+            case State.INTRO1:
+                panelIntro1.SetActive(true);
+                break;
+            case State.INTRO2:
+                panelIntro2.SetActive(true);
+                break;
+            case State.MENU:
                 highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
                 panelMenu.SetActive(true);
                 break;
@@ -97,7 +128,29 @@ public class GameManager : MonoBehaviour
     {
         switch (_state)
         {
+            case State.COVER:
+                if(Input.anyKeyDown)
+                {
+                    SwitchState(State.INTRO1);
+                }
+                break;
+            case State.INTRO1:
+                if(Input.anyKeyDown)
+                {
+                    SwitchState(State.INTRO2);
+                }
+                break;
+            case State.INTRO2:
+                if(Input.anyKeyDown)
+                {
+                    SwitchState(State.MENU);
+                }
+                break;
             case State.MENU:
+                if(Input.anyKeyDown)
+                {
+                    SwitchState(State.INIT);
+                }
                 break;
             case State.INIT:
                 break;
@@ -127,6 +180,15 @@ public class GameManager : MonoBehaviour
     {
         switch (_state)
         {
+            case State.COVER:
+                panelCover.SetActive(false);
+                break;
+            case State.INTRO1:
+                panelIntro1.SetActive(false);
+                break;
+            case State.INTRO2:
+                panelIntro2.SetActive(false);
+                break;
             case State.MENU:
                 panelMenu.SetActive(false);
                 break;

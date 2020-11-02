@@ -43,8 +43,9 @@ public class GameFlow : MonoBehaviour
         Instantiate(desctructibleItemOneObj, _nextDesctructibleItemOneSpawn, desctructibleItemOneObj.rotation);
         
         // Repete itemTwo
-        _nextTileSpawn.x += 48;
-        _nextTileSpawn.y = 8;
+        _nextTileSpawn.x += 141;
+        _nextTileSpawn.y = 13.71383f;
+        _nextTileSpawn.z = -9.05893f;
         _randZ = Random.Range(-1, 2);
         _nextDesctructibleItemTwoSpawn.x = _nextTileSpawn.x;
         _nextDesctructibleItemTwoSpawn.y = 1.96f;
@@ -89,11 +90,11 @@ public class GameFlow : MonoBehaviour
         }
 
         _nextNpcSpawn.x = _nextTileSpawn.x;
-        _nextNpcSpawn.y = 1.72f;
+        _nextNpcSpawn.y = 0.5f;
         _nextNpcSpawn.z = _randZ;
         Instantiate(npcObj, _nextNpcSpawn, npcObj.rotation);
 
-        _nextTileSpawn.x += 48;
+        _nextTileSpawn.x += 141;
         StartCoroutine(spawnTile());
     }
 }
