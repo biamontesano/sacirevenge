@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class GameFlow : MonoBehaviour
 {
+    public GameObject Player;
+    public GameObject Paredao;
+    private float Distancia;
+
     public Transform tile1Obj;
     Vector3 _nextTileSpawn;
 
@@ -24,32 +29,43 @@ public class GameFlow : MonoBehaviour
     
     int _randChoice;
 
-    void Start()
+
+    private void Start()
     {
-        StartCoroutine(spawnTile());
+        Player = GameObject.FindWithTag("Jogador");
+        Paredao = GameObject.FindWithTag("BateuCriou");
+    }
+    private void FixedUpdate ()
+    {
+        Distancia = Vector3.Distance(Paredao.transform.position, Player.transform.position);
+
+        if (Distancia < 0.80)
+        {
+           
+        }
+        if (Distancia > 5)
+        {
+
+        }
     }
 
-    void Update()
-    {
-        
-    }
-
+    
     IEnumerator spawnTile()
     {
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSeconds(1);
 
         // Repete itemOne e cenário
         _randZ = Random.Range(-1, 2);
         _nextDesctructibleItemOneSpawn = _nextTileSpawn;
         _nextDesctructibleItemOneSpawn.y = 1.157f;
         _nextDesctructibleItemOneSpawn.z = _randZ;
+        Instantiate(tile1Obj, _nextTileSpawn, tile1Obj.rotation);
         // Instantiate(npcHomeObj, _nextNpcHomeSpawn, npcHomeObj.rotation);
         Instantiate(desctructibleItemOneObj, _nextDesctructibleItemOneSpawn, desctructibleItemOneObj.rotation);
         
         // Repete itemTwo
-        _nextTileSpawn.x += 320.6f;
-        _nextTileSpawn.y = 15.3f;
-        _nextTileSpawn.z = -8.9f;
+        _nextTileSpawn.x += 146.5f;
+        _nextTileSpawn.y = 14;
         _randZ = Random.Range(-1, 2);
         _nextDesctructibleItemTwoSpawn.x = _nextTileSpawn.x;
         _nextDesctructibleItemTwoSpawn.y = 1.96f;
@@ -98,7 +114,10 @@ public class GameFlow : MonoBehaviour
         _nextNpcSpawn.z = _randZ;
         Instantiate(npcObj, _nextNpcSpawn, npcObj.rotation);
 
-        _nextTileSpawn.x += 3;
-        StartCoroutine(spawnTile());
+        _nextTileSpawn.x += 146.5f;
+        _nextTileSpawn.y = 14;
+
+        yield break;
     }
+
 }

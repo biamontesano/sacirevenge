@@ -8,6 +8,10 @@ TagManager:
   - Inimigo
   - Jogador
   - Obstacle
+  - DesctructibleItem
+  - SpawnInimigo
+  - Cenario
+  - BateuCriou
   layers:
   - Default
   - TransparentFX
