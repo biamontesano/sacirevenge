@@ -36,20 +36,20 @@ public class GameFlow : MonoBehaviour
 
     IEnumerator spawnTile()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(5);
 
         // Repete itemOne e cenário
         _randZ = Random.Range(-1, 2);
         _nextDesctructibleItemOneSpawn = _nextTileSpawn;
         _nextDesctructibleItemOneSpawn.y = 1.157f;
         _nextDesctructibleItemOneSpawn.z = _randZ;
-        Instantiate(tile1Obj, _nextTileSpawn, tile1Obj.rotation);
         // Instantiate(npcHomeObj, _nextNpcHomeSpawn, npcHomeObj.rotation);
         Instantiate(desctructibleItemOneObj, _nextDesctructibleItemOneSpawn, desctructibleItemOneObj.rotation);
         
         // Repete itemTwo
-        _nextTileSpawn.x += 48.8f;
-        _nextTileSpawn.y = 1;
+        _nextTileSpawn.x += 320.6f;
+        _nextTileSpawn.y = 15.3f;
+        _nextTileSpawn.z = -8.9f;
         _randZ = Random.Range(-1, 2);
         _nextDesctructibleItemTwoSpawn.x = _nextTileSpawn.x;
         _nextDesctructibleItemTwoSpawn.y = 1.96f;
@@ -98,7 +98,7 @@ public class GameFlow : MonoBehaviour
         _nextNpcSpawn.z = _randZ;
         Instantiate(npcObj, _nextNpcSpawn, npcObj.rotation);
 
-        _nextTileSpawn.x += 48;
+        _nextTileSpawn.x += 3;
         StartCoroutine(spawnTile());
     }
 }
