@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Runtime.CompilerServices;
@@ -157,7 +157,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
     //Destruindo Objetos.
     // private void OnTriggerEnter(Collider objetoDeColisao)
     // {
@@ -169,9 +168,7 @@ public class PlayerController : MonoBehaviour
     //             Destroy(objetoDeColisao.gameObject);
     //             GameManager.Instance.Score += DestroyOnTrigger.Instance.points;
     //         }
-
     //     }
     // }
-
 
 }
