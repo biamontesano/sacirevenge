@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 295c9a7b28be3b44eb7265968dac62c7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Street Hipster
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
