@@ -21,17 +21,23 @@ public class NpcsController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Direction = Player.transform.position - Npc.transform.position;
-        Distance = Vector3.Distance(transform.position, Player.transform.position);
+        if (GameObject.FindWithTag("Jogador") == true)
+        {
+            Direction = Player.transform.position - Npc.transform.position;
+            Distance = Vector3.Distance(transform.position, Player.transform.position);
 
 
-        Quaternion NewRotation = Quaternion.LookRotation(Direction);
-        Npc.MoveRotation(NewRotation);
+            Quaternion NewRotation = Quaternion.LookRotation(Direction);
+            Npc.MoveRotation(NewRotation);
 
-        if (Distance > 2 )
-         {
-            Movement(Direction, MoveSpeed);
-         }
+            if (Distance > 2)
+            {
+                Movement(Direction, MoveSpeed);
+            }
+        } else
+        {
+            Time.timeScale = 0;
+        }
     }
 
     public void Movement(Vector3 Move, float MS)

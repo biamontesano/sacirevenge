@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 67d1c9ff3a53a8446b160f2a343c348f
+guid: 98526dff2f18da344b17b31e16d1280c
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 7192676213504021726
+    second: Saci@Catch
   externalObjects: {}
   materials:
     materialImportMode: 1

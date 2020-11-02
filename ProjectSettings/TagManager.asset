@@ -12,6 +12,8 @@ TagManager:
   - SpawnInimigo
   - Cenario
   - BateuCriou
+  - ColidiuParou
+  - NPC
   layers:
   - Default
   - TransparentFX
