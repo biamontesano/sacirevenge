@@ -475,7 +475,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -47}
+  m_AnchoredPosition: {x: -16.000008, y: -47}
   m_SizeDelta: {x: 360, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &153100163
@@ -499,7 +499,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Sai pra l\xE1 com essa coisa de gringo que aqui \xE9 Brasil, porra"
+  m_Text: "SAI PRA L\xC1 COM ESSA COISA DE GRINGO QUE AQUI \xC9 BRASIL, PORRA"
 --- !u!222 &153100164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -554,8 +554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 45}
-  m_SizeDelta: {x: 240, y: 160}
+  m_AnchoredPosition: {x: 0, y: 36}
+  m_SizeDelta: {x: 240, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &180599048
 MonoBehaviour:
@@ -578,8 +578,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -589,8 +589,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Vai esfriar essa cabe\xE7a, mas v\xEA se n\xE3o demora n\xE3o"
+    m_LineSpacing: 1.2
+  m_Text: "VAI ESFRIAR ESSA CABE\xC7A, MAS V\xCA SE N\xC3O DEMORA N\xC3O"
 --- !u!222 &180599049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -216, y: -135}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291216706
 MonoBehaviour:
@@ -707,7 +707,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -719,7 +719,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Highscore: <hs>'
+  m_Text: 'HIGHSCORE: <HS>'
 --- !u!222 &291216707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -894,8 +894,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 34}
-  m_SizeDelta: {x: 240, y: 120}
+  m_AnchoredPosition: {x: 0, y: 52}
+  m_SizeDelta: {x: 240, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320244481
 MonoBehaviour:
@@ -918,8 +918,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -929,8 +929,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Acabou-se o que era doce!\r\nN\xE3o foi dessa vez, merm\xE3o."
+    m_LineSpacing: 1.2
+  m_Text: "ACABOU-SE O QUE ERA DOCE!\r\nN\xC3O FOI DESSA VEZ, MERM\xC3O."
 --- !u!222 &320244482
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1053,7 +1053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36, y: 37}
+  m_AnchoredPosition: {x: -36, y: 34}
   m_SizeDelta: {x: 700, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &392828190
@@ -1480,7 +1480,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b4a03e9747b84924ea97293dc5fefa84, type: 3}
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -1492,7 +1492,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pular o lenga-lenga
+  m_Text: PULAR O LENGA-LENGA
 --- !u!222 &692288826
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1559,7 +1559,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b4a03e9747b84924ea97293dc5fefa84, type: 3}
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -1571,7 +1571,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Vamo bota pra fud\xEA!"
+  m_Text: "VAMO BOTA PRA FUD\xCA!"
 --- !u!222 &700280823
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1614,7 +1614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278, y: 192}
+  m_AnchoredPosition: {x: -278, y: 188}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747391995
@@ -1638,8 +1638,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 24
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1650,7 +1650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: <sc>'
+  m_Text: 'SCORE: <SC>'
 --- !u!222 &747391996
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1754,8 +1754,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125, y: -39}
-  m_SizeDelta: {x: 400, y: 300}
+  m_AnchoredPosition: {x: 125, y: 13}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &778803959
 MonoBehaviour:
@@ -1778,22 +1778,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Mas para tal fa\xE7anha ele precisa de um sacrif\xEDcio, precisa da alma
-    de uma pessoa pura que n\xE3o paga pau para gringo.\n\nVoc\xEA foi escolhido
-    como tal sacrif\xEDcio.  Em forma de sacrif\xEDcio... ele s\xF3 vai precisar...
-    de... uma perninha. . .\n"
+    m_LineSpacing: 1.2
+  m_Text: "MAS PARA TAL FA\xC7ANHA ELE PRECISA DE UM SACRIF\xCDCIO, PRECISA DA ALMA
+    DE UMA PESSOA PURA QUE N\xC3O PAGA PAU PARA GRINGO.\r\n\r\nVOC\xCA FOI ESCOLHIDO
+    COMO TAL SACRIF\xCDCIO.  EM FORMA DE SACRIF\xCDCIO... ELE S\xD3 VAI PRECISAR...
+    DE... UMA PERNINHA. . ."
 --- !u!222 &778803960
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1913,7 +1913,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -121.99999}
+  m_AnchoredPosition: {x: -23, y: -121.99999}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &832613313
@@ -2430,8 +2430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -101}
-  m_SizeDelta: {x: 240, y: 80}
+  m_AnchoredPosition: {x: 0, y: -96}
+  m_SizeDelta: {x: 220, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929063714
 MonoBehaviour:
@@ -2454,19 +2454,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 24
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Taca-lhe uma tecla a\xED e vam\xF4 de novo que vai d\xE1 certo."
+    m_LineSpacing: 1.1
+  m_Text: "TACA-LHE UMA TECLA A\xCD E VAM\xD4 DE NOVO QUE VAI D\xC1 CERTO."
 --- !u!222 &929063715
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2619,7 +2619,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -2631,7 +2631,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hoje n\xE3o, s\xF4 m\xF3 trox\xE3o, v\xF4 dormi cedo"
+  m_Text: "HOJE N\xC3O, S\xD4 M\xD3 TROX\xC3O, V\xD4 DORMI CEDO"
 --- !u!222 &1040280532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2698,7 +2698,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
     m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
@@ -2710,7 +2710,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "B\xF3ra"
+  m_Text: "B\xD3RA"
 --- !u!222 &1052609322
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2832,8 +2832,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118, y: -163}
-  m_SizeDelta: {x: 240, y: 30}
+  m_AnchoredPosition: {x: 119, y: -163}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1075812197
 MonoBehaviour:
@@ -2991,11 +2991,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3003,7 +3003,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Come\xE7ar a parada"
+  m_Text: "COME\xC7AR A PARADA"
 --- !u!222 &1082992744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3149,7 +3149,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
     m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
@@ -3161,7 +3161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voltar
+  m_Text: VOLTAR
 --- !u!222 &1251186515
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3207,7 +3207,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 297.04, y: -183}
-  m_SizeDelta: {x: 160, y: 40}
+  m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1403455845
 MonoBehaviour:
@@ -3336,7 +3336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: 150}
+  m_AnchoredPosition: {x: 155, y: 156}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407105039
@@ -3360,7 +3360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
     m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
@@ -3372,7 +3372,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Saci
+  m_Text: SACI
 --- !u!222 &1407105040
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3631,7 +3631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 163, y: 3}
+  m_AnchoredPosition: {x: 163, y: -1}
   m_SizeDelta: {x: 360, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532570015
@@ -3647,7 +3647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.05882353, g: 0.72156864, b: 0.47843137, a: 1}
+  m_Color: {r: 0.8784314, g: 0.59607846, b: 0.30980393, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3655,23 +3655,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Prest'aten\xE7\xE3o no bagulho:\n\nPra se movimentar, a parada \xE9 com
-    as setas do teu teclado;\n\nPra destruir os negocinho,\ntecla Space;\n\ncuida
-    com as crian\xE7as com a garrafa, elas acabam com a nossa manha e a gente e s\xF3
-    na pr\xF3xima vida. As outras s\xE3o s\xF3 chatas mesmo.\n\nPra se proteger,
-    taca o furac\xE3o nela com a tecla E.\n\nF\xE9 em deus, mas n\xE3o nas criancinha.\n\n"
+    m_LineSpacing: 1.2
+  m_Text: "PREST'ATEN\xC7\xC3O NO BAGULHO:\r\n\r\nPRA SE MOVIMENTAR, A PARADA \xC9
+    COM AS SETAS DO TEU TECLADO;\r\n\r\nPRA DESTRUIR OS NEGOCINHO,\r\nTECLA SPACE;\r\n\r\nCUIDA
+    COM AS CRIAN\xC7AS COM A GARRAFA, ELAS ACABAM COM A NOSSA MANHA E A GENTE E S\xD3
+    NA PR\xD3XIMA VIDA. AS OUTRAS S\xC3O S\xD3 CHATAS MESMO.\r\n\r\nPRA SE PROTEGER,
+    TACA O FURAC\xC3O NELA COM A TECLA E.\r\n\r\nF\xC9 EM DEUS, MAS N\xC3O NAS CRIANCINHA.\r"
 --- !u!222 &1532570016
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3714,8 +3714,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: -206.00002}
-  m_SizeDelta: {x: 440, y: 800}
+  m_AnchoredPosition: {x: 11, y: 5}
+  m_SizeDelta: {x: 440, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1545799705
 MonoBehaviour:
@@ -3738,8 +3738,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3749,14 +3749,12 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Em um futuro n\xE3o t\xE3o distante em Outubro no Brasil, as pessoas encantadas
-    pela cultura de outro pa\xEDs come\xE7aram a comemorar o Halloween exatamente
-    igual nos EUA.\n\n Com isso Z\xE9 do Caix\xE3o, enfurecido, resolve tomar uma
-    provid\xEAncia e mandar criaturas macabras genuinamente brasileiras acabar com
-    a farra toda...\n\nPor\xE9m nenhum obt\xE9m sucesso. Ele ent\xE3o resolve usar
-    seu \xFAltimo recurso.... Invocar seu emiss\xE1rio do caos. . . o incontrol\xE1vel.
-    . .\n"
+    m_LineSpacing: 1.2
+  m_Text: "EM UM FUTURO N\xC3O T\xC3O DISTANTE EM OUTUBRO NO BRASIL, AS PESSOAS ENCANTADAS
+    PELA CULTURA DE OUTRO PA\xCDS COME\xC7ARAM A COMEMORAR O HALLOWEEN EXATAMENTE
+    IGUAL NOS EUA.\r\n\r\nCOM ISSO Z\xC9 DO CAIX\xC3O, ENFURECIDO, RESOLVE TOMAR
+    UMA PROVID\xCANCIA E  USAR SEU \xDALTIMO RECURSO.... INVOCAR SEU EMISS\xC1RIO
+    DO CAOS. . . O INCONTROL\xC1VEL. . .\r\n"
 --- !u!222 &1545799706
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5027,8 +5025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -158.00002}
-  m_SizeDelta: {x: 320, y: 60}
+  m_AnchoredPosition: {x: 0, y: -143}
+  m_SizeDelta: {x: 340, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893555110
 MonoBehaviour:
@@ -5331,8 +5329,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 24
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -5343,7 +5341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Parou por qu\xEA?! Continua logo!"
+  m_Text: "PAROU POR QU\xCA?! CONTINUA LOGO!"
 --- !u!222 &1980175400
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5809,8 +5807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216, y: 52}
-  m_SizeDelta: {x: 240, y: 140}
+  m_AnchoredPosition: {x: -216, y: 28}
+  m_SizeDelta: {x: 240, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140373025
 MonoBehaviour:
@@ -5833,8 +5831,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a531bb3abda493c4ebe09a1f613c7358, type: 3}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 58c5d4795a63a7c4ebcddc5aa2490e63, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -5844,8 +5842,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Faca na caveira e nada na carteira!
+    m_LineSpacing: 1.2
+  m_Text: FACA NA CAVEIRA E NADA NA CARTEIRA!
 --- !u!222 &2140373026
 CanvasRenderer:
   m_ObjectHideFlags: 0
