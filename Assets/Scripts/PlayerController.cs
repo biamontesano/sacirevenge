@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Runtime.CompilerServices;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
 
     //Escondido no Inspector
-    
+
     [HideInInspector]
     public Animator anim;
     [HideInInspector]
@@ -50,9 +50,9 @@ public class PlayerController : MonoBehaviour
         //**********************Movimentação Personagem***************//
         float mH = Input.GetAxis("Horizontal");
         float mV = Input.GetAxis("Vertical");
-       
 
-        moveDirection = new Vector3(mH * moveSpeed, moveDirection.y , mV * moveSpeed);
+
+        moveDirection = new Vector3(mH * moveSpeed, moveDirection.y, mV * moveSpeed);
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
 
         if (controller.isGrounded)
@@ -90,17 +90,19 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Attack", true);
             Atacando = true;
-        } else
+        }
+        else
         {
             anim.SetBool("Attack", false);
             Atacando = false;
         }
 
         //Animação Movimentação (A/S/W/D)
-        if (mH !=  0 || mV != 0)
+        if (mH != 0 || mV != 0)
         {
             anim.SetBool("Movendo", true);
-        }else
+        }
+        else
         {
             anim.SetBool("Movendo", false);
         }
@@ -109,7 +111,7 @@ public class PlayerController : MonoBehaviour
         //SaciGarrafa - Puxa para Garrafa e Destroi o Jogador.
         Distancia = Vector3.Distance(transform.position, Enemy.transform.position);
 
-        if (Distancia < 2.4 && PodeUsar == true )
+        if (Distancia < 2.4 && PodeUsar == true)
         {
             sugar = true;
             StartCoroutine(Sugando());
@@ -118,7 +120,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             sugar = false;
-            
+
             anim.SetBool("Sugando?", false);
             moveSpeed = 6;
         }
@@ -144,16 +146,16 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetBool("Sugando?", true);
         yield return new WaitForSecondsRealtime(GarrafaTime); //Precisa Configurar o Tempo.
-        if(sugar == true)
+        if (sugar == true)
         {
             Destroy(gameObject);
-        } else
+        }
+        else
         {
             yield break;
         }
 
     }
-
 
     //Destruindo Objetos.
     // private void OnTriggerEnter(Collider objetoDeColisao)
@@ -166,9 +168,7 @@ public class PlayerController : MonoBehaviour
     //             Destroy(objetoDeColisao.gameObject);
     //             GameManager.Instance.Score += DestroyOnTrigger.Instance.points;
     //         }
-                
     //     }
     // }
-
 
 }
