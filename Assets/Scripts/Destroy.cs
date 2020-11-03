@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
+    public int hits;
+    public int points;
     public GameObject destroyedVersion;
 
     private void OnMouseDown()
     {
-        Instantiate(destroyedVersion, transform.position, transform.rotation);
-        Destroy(gameObject);
+        hits--;
+        if(hits < 0)
+        {
+            Instantiate(destroyedVersion, transform.position, transform.rotation);
+            GameManager.Instance.Score += points;
+            Destroy(gameObject);
+        }
 
     }
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2421670845135986841}
   - component: {fileID: 8717212124306254448}
   m_Layer: 0
-  m_Name: Fantasminha_02_Base
+  m_Name: Fantasminha_02_Base_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,4 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883bb7fd6e84704a82b57fe2c39cd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hits: 1
+  points: 15
   destroyedVersion: {fileID: 116438024205532499, guid: 8424bf0aeec7faa47a87075d4b83d43b, type: 3}
