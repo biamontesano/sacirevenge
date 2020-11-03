@@ -112,14 +112,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -5478176400644841686, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ddde8d2d795e2647a8b748a86adb789, type: 2}
+    - target: {fileID: 594405284624699165, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ddde8d2d795e2647a8b748a86adb789, type: 2}
+    - target: {fileID: 690437643778504717, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ddde8d2d795e2647a8b748a86adb789, type: 2}
     - target: {fileID: 919132149155446097, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
       propertyPath: m_Name
       value: Crianca1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1840298538426083440, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ddde8d2d795e2647a8b748a86adb789, type: 2}
     - target: {fileID: 4392779863682102339, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 115c8799e0f3f194ba233969d0a41017, type: 2}
+      objectReference: {fileID: 2100000, guid: d417467ca03f8654ca6afd1ce95abfb8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54397e6f2e35ee74c988a9fa6affebf2, type: 3}
 --- !u!1 &1060706558383623041 stripped
