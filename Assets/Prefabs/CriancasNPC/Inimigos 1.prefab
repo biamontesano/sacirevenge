@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 3
-  Player: {fileID: 0}
+  Player: {fileID: 3967101101924231620, guid: fd3c6b8fb8206d544ad021ed72386879, type: 3}
   animInimigo: {fileID: 0}
 --- !u!1 &1503419228417941154
 GameObject:
