@@ -128,4 +128,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hits: 1
   points: 5
-  destroyedVersion: {fileID: 0}
+  destroyedVersion: {fileID: 8220378959270427159, guid: ca4aca2b18b898e4ca5e1704ca7334b4, type: 3}
+  Player: {fileID: 3967101101924231620, guid: fd3c6b8fb8206d544ad021ed72386879, type: 3}

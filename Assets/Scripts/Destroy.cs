@@ -7,7 +7,7 @@ public class Destroy : MonoBehaviour
     public int hits;
     public int points;
     public GameObject destroyedVersion;
-    public GameObject Player;
+    private GameObject Player;
     private float playerdistance;
 
     void Start()
