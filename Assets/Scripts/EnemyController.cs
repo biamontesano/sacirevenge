@@ -65,7 +65,7 @@ public class EnemyController : MonoBehaviour
     {
         if (paredeColisao.tag == "BateuCriou")
         {
-            MoveSpeed += 10;
+            MoveSpeed += 1;
         }
     }
 
