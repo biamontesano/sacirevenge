@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 67d1c9ff3a53a8446b160f2a343c348f
+guid: 5428103a399d2c0408e698c991a0e43e
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -8000127163127207206
+    second: Walk_Bottle
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -30,7 +33,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk_Bottle
+      takeName: "Crian\xE7a@Walk_Bottle"
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
