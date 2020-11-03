@@ -8,8 +8,14 @@ public class Paredao : MonoBehaviour
 
     public Transform tile1Obj;
     public GameObject MoveSpeed;
+    private EnemyController EnemyMS;
     Vector3 _nextTileSpawn;
     public bool Cruzou;
+
+    private void Start()
+    {
+        EnemyMS = GetComponent<EnemyController>();
+    }
 
     private void OnTriggerStay(Collider paredeColisao)
     {
@@ -31,6 +37,7 @@ public class Paredao : MonoBehaviour
             _nextTileSpawn.x += 146.5f;
             _nextTileSpawn.y = 14;
             Instantiate(tile1Obj, _nextTileSpawn, tile1Obj.rotation);
+            EnemyMS.MoveSpeed += 1; 
             Cruzou = false;
         } else
         {

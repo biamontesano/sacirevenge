@@ -61,12 +61,5 @@ public class EnemyController : MonoBehaviour
         transform.GetChild(gerarTipoCrianca).gameObject.SetActive(true);
     }
 
-    private void OnTriggerStay(Collider paredeColisao)
-    {
-        if (paredeColisao.tag == "BateuCriou")
-        {
-            MoveSpeed += 1;
-        }
-    }
 
 }
