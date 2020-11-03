@@ -126,4 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883bb7fd6e84704a82b57fe2c39cd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hits: 1
+  points: 10
   destroyedVersion: {fileID: 683708823804575419, guid: 02628b8f47bb83d42b5c0d6c5c2acd62, type: 3}

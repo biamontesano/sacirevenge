@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3796503520173574641}
   - component: {fileID: 4985434627286750043}
   m_Layer: 0
-  m_Name: Lapides_Base
+  m_Name: Lapides_Base_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,4 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883bb7fd6e84704a82b57fe2c39cd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hits: 1
+  points: 15
   destroyedVersion: {fileID: 4878865716712769468, guid: 35c9c725420e3884f98f56f5f12498fb, type: 3}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 556114798527934041}
   - component: {fileID: 1425552836742324940}
   m_Layer: 0
-  m_Name: Espantalho_Base
+  m_Name: Espantalho_Base_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,4 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883bb7fd6e84704a82b57fe2c39cd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hits: 1
+  points: 15
   destroyedVersion: {fileID: 9069358447988348368, guid: 382400b24328aaf4dbfc87c363909179, type: 3}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5267044095486753698}
   - component: {fileID: 7401363155838895479}
   m_Layer: 0
-  m_Name: Caldeirao_Base
+  m_Name: Caldeirao_Base_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,4 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883bb7fd6e84704a82b57fe2c39cd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hits: 1
+  points: 10
   destroyedVersion: {fileID: 8890330980706829093, guid: 1396119fed379b1409f297fdf3baffb0, type: 3}
