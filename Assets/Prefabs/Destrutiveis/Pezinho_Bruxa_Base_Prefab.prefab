@@ -129,3 +129,4 @@ MonoBehaviour:
   hits: 1
   points: 20
   destroyedVersion: {fileID: 7720505432647934084, guid: 2d0a773ac4c7319409c084b48fc7d11a, type: 3}
+  Player: {fileID: 3967101101924231620, guid: fd3c6b8fb8206d544ad021ed72386879, type: 3}
