@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5a81babcaad03694a88dabf0f6590ceb
+guid: be7a9a4bd84c03f47af6cfee25cf845e
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
@@ -38,7 +38,7 @@ ModelImporter:
       name: Attack
       takeName: Saci@Attack
       internalID: 0
-      firstFrame: 0
+      firstFrame: 10
       lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
@@ -46,7 +46,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -62,7 +62,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 10
     isReadable: 0
   meshes:
     lODScreenPercentages: []

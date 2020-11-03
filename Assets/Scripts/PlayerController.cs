@@ -8,16 +8,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 2;
-    private Rigidbody Meubody;
-    private Movimentacao MovimentaPersonagem;
+    public float moveSpeed;
+    public CharacterController controller;
+    public float gravityScale;
+    public float rotSpeed = 90;
     public float CooldownSkill;
     public float DuracaoTornado;
     public float GarrafaTime;
     public GameObject Enemy;
     public bool Colisao;
     private Vector3 moveDirection;
-    public LayerMask Mascarachao;
 
 
     //Escondido no Inspector
@@ -39,26 +39,33 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Meubody = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
         Enemy = GameObject.FindWithTag("Inimigo");
-        MovimentaPersonagem = GetComponent<Movimentacao>();
         PodeUsar = true;
         Colisao = false;
-        //Physics.IgnoreCollision(ColliderPlayer, Enemy.GetComponent<Collider>(), Colisao);
+        Physics.IgnoreCollision(controller, Enemy.GetComponent<Collider>(), Colisao);
     }
 
     // Update is called once per frame
     void Update()
     {
         //**********************Movimentação Personagem***************//
-        float eixoX = Input.GetAxis("Horizontal");
-        float eixoZ = Input.GetAxis("Vertical");
+        float mH = Input.GetAxis("Horizontal");
+        float mV = Input.GetAxis("Vertical");
 
-        moveDirection = new Vector3(eixoX, 0, eixoZ);
 
-        MovimentaPersonagem.Movimentar(moveDirection, moveSpeed);
-        MovimentaPersonagem.RotacionarJogador(Mascarachao);
+        moveDirection = new Vector3(mH * moveSpeed, moveDirection.y, mV * moveSpeed);
+        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
 
+        if (controller.isGrounded)
+        {
+            if (Input.GetAxis("Horizontal") > 0)
+                transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            else if (Input.GetAxis("Horizontal") < 0)
+                transform.localRotation = Quaternion.Euler(new Vector3(0, 270, 0));
+        }
+
+        controller.Move(moveDirection * Time.deltaTime);
         //**********************Movimentação Personagem***************//
         //??
 
@@ -79,19 +86,19 @@ public class PlayerController : MonoBehaviour
 
 
         //Animação de Ataque
-        if (Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("Attack", true);
-            Atacando = true;
-        }
-        else
-        {
-            anim.SetBool("Attack", false);
-            Atacando = false;
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    anim.SetBool("Attack", true);
+        //    Atacando = true;
+        //}
+        //else
+        //{
+        //    anim.SetBool("Attack", false);
+        //    Atacando = false;
+        //}
 
         //Animação Movimentação (A/S/W/D)
-        if (eixoX != 0 || eixoZ != 0)
+        if (mH != 0 || mV != 0)
         {
             anim.SetBool("Movendo", true);
         }
@@ -119,20 +126,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-     
-    }
 
     // Skill Tornado 
     public void SkillDuracao()
     {
         anim.SetBool("SkillTornado", true);
         StartCoroutine(DuracaoSkill(DuracaoTornado)); //Precisa Configurar o Tempo.
+
         IEnumerator DuracaoSkill(float duracao)
         {
             yield return new WaitForSecondsRealtime(duracao);
-            moveSpeed = 80;
             PodeUsar = false;
             Colisao = false;
             anim.SetBool("SkillTornado", false);
