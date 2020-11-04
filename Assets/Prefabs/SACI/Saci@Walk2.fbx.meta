@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 848a246f28e467f4a9331a617b028334
+guid: 0f41924b9e033dc49a83ed91c6bc0e9b
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
-      74: 7384850029132954699
-    second: Walk60fps
+      74: -2413648761848347215
+    second: Walk2SACI
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk60fps
-      takeName: Saci@Walk60fps
+      name: Walk2SACI
+      takeName: Saci@Walk2
       internalID: 0
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
