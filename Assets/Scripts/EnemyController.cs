@@ -11,7 +11,10 @@ public class EnemyController : MonoBehaviour
     private Vector3 Direction;
     private float Distance;
     [HideInInspector]
-    public Animator animInimigo;
+    public Animator animInimigo; 
+    public Material[] randomMaterials;
+
+    private Renderer inimigos;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +60,21 @@ public class EnemyController : MonoBehaviour
 
     void CriancasRandom()
     {
-        int gerarTipoCrianca = Random.Range(1, 7);
+        for( int i = 2; i < 7; i++ )
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+        // transform.GetChild(3).gameObject.SetActive(false);
+        // transform.GetChild(4).gameObject.SetActive(false);
+        // transform.GetChild(5).gameObject.SetActive(false);
+        // transform.GetChild(6).gameObject.SetActive(false);
+        
+        inimigos = GetComponent<Renderer>();
+
+        inimigos.material = randomMaterials[Random.Range(0, randomMaterials.Length)];
+        
+        int gerarTipoCrianca = Random.Range(2, 6);
+        
         transform.GetChild(gerarTipoCrianca).gameObject.SetActive(true);
     }
 
