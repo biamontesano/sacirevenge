@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Paredao : MonoBehaviour
 {
 
     public Transform tile1Obj;
-    public GameObject MoveSpeed;
     Vector3 _nextTileSpawn;
     public bool Cruzou;
 
@@ -16,7 +16,8 @@ public class Paredao : MonoBehaviour
         {
             Cruzou = true;
             StartCoroutine(spawnTitle());
-        } else
+        }
+        else
         {
             Cruzou = false;
         }
@@ -31,7 +32,8 @@ public class Paredao : MonoBehaviour
             _nextTileSpawn.y = 14;
             Instantiate(tile1Obj, _nextTileSpawn, tile1Obj.rotation);
             Cruzou = false;
-        } else
+        }
+        else
         {
             yield break;
         }

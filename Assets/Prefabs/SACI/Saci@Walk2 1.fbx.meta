@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 4e65ead77173f554bbf83863231e6268
+guid: 3feae0323ade05b40a884d3d6090d841
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
-      74: -558265087936446634
-    second: FurracaoSACI
+      74: -2413648761848347215
+    second: Walk2 1
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: FurracaoSACI
-      takeName: Saci@Furracao
+      name: Walk2 1
+      takeName: Saci@Walk2
       internalID: 0
       firstFrame: 0
-      lastFrame: 29
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
