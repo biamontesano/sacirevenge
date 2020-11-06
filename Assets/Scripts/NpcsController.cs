@@ -6,43 +6,25 @@ using UnityEngine.AI;
 public class NpcsController : MonoBehaviour
 {
 
-    public float MoveSpeed = 2;
-    private Rigidbody Npc;
-    public GameObject Player;
-    private Vector3 Direction;
-    private float Distance;
+    public Transform[] target;
+    public float speed = 5;
+    private int current;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Npc = GetComponent<Rigidbody>();
-        Player = GameObject.FindWithTag("Jogador");
+
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        if (GameObject.FindWithTag("Jogador") == true)
+        if(transform.position != target[current].position)
         {
-            Direction = Player.transform.position - Npc.transform.position;
-            Distance = Vector3.Distance(transform.position, Player.transform.position);
-
-
-            Quaternion NewRotation = Quaternion.LookRotation(Direction);
-            Npc.MoveRotation(NewRotation);
-
-            if (Distance > 2)
-            {
-                Movement(Direction, MoveSpeed);
-            }
-        } else
+            Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
+            GetComponent<Rigidbody>().MovePosition(pos);
+        }
+        else
         {
-            Time.timeScale = 0;
+            current = (current + 1) % target.Length;
         }
     }
-
-    public void Movement(Vector3 Move, float MS)
-    {
-        Npc.MovePosition(Npc.position + Move.normalized * MS * Time.deltaTime);
-    }
-
 }

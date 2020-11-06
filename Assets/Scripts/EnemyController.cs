@@ -73,7 +73,7 @@ public class EnemyController : MonoBehaviour
 
         inimigos.material = randomMaterials[Random.Range(0, randomMaterials.Length)];
         
-        int gerarTipoCrianca = Random.Range(2, 6);
+        int gerarTipoCrianca = Random.Range(2, 7);
         
         transform.GetChild(gerarTipoCrianca).gameObject.SetActive(true);
     }

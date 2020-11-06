@@ -19,7 +19,7 @@ public class Destroy : MonoBehaviour
     {
         playerdistance = Vector3.Distance(transform.position, Player.transform.position);
 
-        if(playerdistance < 3)
+        if(playerdistance < 6)
         {
             hits--;
             if(hits < 0)

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -18,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public bool Colisao;
     private Vector3 moveDirection;
     public LayerMask Mascarachao;
+    public float EnemyDistance;
 
 
     //Escondido no Inspector
@@ -70,6 +70,12 @@ public class PlayerController : MonoBehaviour
             PodeUsar = false;
             moveSpeed = 20f;
             StartCoroutine(SkillCooldown(CooldownSkill)); //Precisa Configurar o Tempo.
+
+            EnemyDistance = Vector3.Distance(transform.position, Enemy.transform.position);
+            if (EnemyDistance < 5)
+            {
+                Destroy(Enemy);
+            }
         }
 
         IEnumerator SkillCooldown(float Cooldown)
